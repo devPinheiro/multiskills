@@ -1,0 +1,37 @@
+<%- include('../layout/adminHeader')  %>
+<h1>All Categories</h1>
+<a href="/admin/categories/add-category" class="btn btn-success">Add a new category</a>
+<br><br>
+
+ <table class="table table-bordered sorting">
+    <thead>
+     <tr class="home">
+        <th>Title</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% categories.forEach((category) => { %>
+        <tr id="<%= category._id %>" class="<%= category.slug %>">
+            <td>
+                <%= category.title %>
+            </td>
+            <td>
+                <a href="/admin/categories/edit-category/<%= category.slug %>">Edit</a>
+            </td>
+            <% if (category.slug == "home") { %>
+                <td></td>
+            <% } else { %>
+            <td>
+                <a class="confirmDeletion" href="/admin/categories/delete-category/<%= category._id %>">Delete</a>
+            </td>
+            <% } %>
+          
+        </tr>
+        <% }); %>
+    </tbody>
+ </table>
+
+
+<%- include('../layout/adminFooter')  %>
