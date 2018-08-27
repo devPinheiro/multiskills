@@ -51,6 +51,23 @@ app.use(expressValidator({
       value,
     };
   },
+  customValidators: {
+    isImage(value, filename) {
+      const extension = (path.extname(filename)).toLowerCase();
+      switch (extension) {
+        case '.jpg':
+          return '.jpg';
+        case '.png':
+          return '.png';
+        case '.jpeg':
+          return '.jpeg';
+        case '':
+          return '.jpg';
+        default:
+          return false;
+      }
+    },
+  },
 }));
 
 // Express messages middleware
