@@ -12,7 +12,12 @@ import adminProducts from './routes/admin_products';
 import page from './routes/page';
 import adminPages from './routes/admin_pages';
 import adminCategories from './routes/admin_categories';
+import products from './routes/products';
+import apiPage from './routes/api/api-page';
+import apiProduct from './routes/api/api-products';
 import dbConfig from './config/database';
+import modelPage from './models/page';
+import Category from './models/category';
 
 // connect to DB
 mongoose.connect(dbConfig.database);
@@ -32,6 +37,24 @@ app.use(bodyParser.urlencoded({ extende: false }));
 // Set global errors variable and messages
 app.locals.errors = null;
 app.locals.messages = null;
+
+// Get all pages for Header.ejs
+modelPage.find((err, pages) => {
+  if (err) {
+    console.log(err);
+  } else {
+    app.locals.pages = pages;
+  }
+});
+
+// Get all Categories for Header.ejs
+Category.find({}, (err, categories) => {
+  if (err) {
+    console.log(err);
+  } else {
+    app.locals.categories = categories;
+  }
+});
 
 // Express File Uploads
 app.use(fileUpload());
@@ -94,12 +117,17 @@ app.use(express.static(path.join(__dirname, 'public/')));
 
 // Set routes
 app.use('/', page);
+app.use('/products', products);
 app.use('/admin/pages', adminPages);
 app.use('/admin/categories', adminCategories);
 app.use('/admin/products', adminProducts);
 
+// API
+app.use('/api/v1/homepage', apiPage);
+app.use('/api/v1/products', apiProduct);
+
 // start server
-const port = 4000;
+const port = 9000;
 
 app.listen(port, () => {
   console.log(`server started on port: ${port}`);
