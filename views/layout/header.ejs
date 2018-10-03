@@ -11,10 +11,10 @@
     <title>eStore - <%= title %></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../assets/dist/css/starter-template.css" rel="stylesheet">
+    <link href="../../assets/dist/css/starter-template.css" rel="stylesheet">
 </head>
 
 <body>
@@ -41,9 +41,18 @@
                     <%}%>
                 
                 <%  }); %>
-                
-                
                
+            </ul>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/cart/checkout">My Cart(
+                        <% if (typeof cart !== "undefined"){ %>
+                            <% cart.length %>
+                            <%} else {%>
+                                0
+                            <%}%>
+                    )</a>
+                </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">

@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import mongoose from 'mongoose';
+import expressmessages from 'express-messages';
 import session from 'express-session';
 import expressValidator from 'express-validator';
 import bodyParser from 'body-parser';
@@ -13,6 +14,7 @@ import page from './routes/page';
 import adminPages from './routes/admin_pages';
 import adminCategories from './routes/admin_categories';
 import products from './routes/products';
+import cart from './routes/cart';
 import apiPage from './routes/api/api-page';
 import apiProduct from './routes/api/api-products';
 import dbConfig from './config/database';
@@ -56,6 +58,18 @@ Category.find({}, (err, categories) => {
   }
 });
 
+// Get /Cart for Header.ejs
+app.get('*', (req, res, next) => {
+  res.locals.cart = req.session.cart;
+  next();
+});
+
+// Express Messages Middleware
+app.use(require('connect-flash')());
+app.use((req, res, next) => {
+    res.locals.messages = require('express-messages')(req, res);
+    next();
+});
 // Express File Uploads
 app.use(fileUpload());
 
@@ -117,6 +131,7 @@ app.use(express.static(path.join(__dirname, 'public/')));
 
 // Set routes
 app.use('/', page);
+app.use('/cart', cart);
 app.use('/products', products);
 app.use('/admin/pages', adminPages);
 app.use('/admin/categories', adminCategories);
@@ -127,7 +142,7 @@ app.use('/api/v1/homepage', apiPage);
 app.use('/api/v1/products', apiProduct);
 
 // start server
-const port = 9000;
+const port = 5000;
 
 app.listen(port, () => {
   console.log(`server started on port: ${port}`);
