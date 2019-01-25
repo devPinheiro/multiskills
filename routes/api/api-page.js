@@ -5,12 +5,10 @@ const router = express.Router();
 // GET Home page
 // set up route
 router.get('/', (req, res) => {
-  Page.findOne({ slug: 'home' }, (err, page) => {
-    if (err) { console.log(err); }
-    res.json({
-      status: 'success',
-      data: page,
-    });
+  if (err) { console.log(err); }
+  res.json({
+    status: 'success',
+    data: page,
   });
 });
 
