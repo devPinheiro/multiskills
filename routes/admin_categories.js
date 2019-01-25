@@ -114,6 +114,14 @@ router.post('/edit-category/:slug', (req, res) => {
           category.slug = slug;
           category.save((err) => {
             if (err) return console.log(err);
+            
+            Category.find({}, (err, categories) => {
+              if (err) {
+                console.log(err);
+              } else {
+                res.app.locals.categories = categories;
+              }
+            });
 
             req.flash('success', 'Category edited succesfully');
             res.redirect(`/admin/categories/edit-category/${category.slug}`);
@@ -130,6 +138,15 @@ router.post('/edit-category/:slug', (req, res) => {
 router.get('/delete-category/:id', (req, res) => {
   Category.findByIdAndRemove(req.params.id, (err) => {
     if (err) return console.log(err);
+
+    Category.find({}, (err, categories) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.app.locals.categories = categories;
+      }
+    });
+
     req.flash('success', 'Categories deleted succesfully');
     res.redirect('/admin/categories/');
   });

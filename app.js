@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import mongoose from 'mongoose';
+import expressmessages from 'express-messages';
 import session from 'express-session';
 import expressValidator from 'express-validator';
 import bodyParser from 'body-parser';
@@ -12,7 +13,13 @@ import adminProducts from './routes/admin_products';
 import page from './routes/page';
 import adminPages from './routes/admin_pages';
 import adminCategories from './routes/admin_categories';
+import products from './routes/products';
+import cart from './routes/cart';
+import apiPage from './routes/api/api-page';
+import apiProduct from './routes/api/api-products';
 import dbConfig from './config/database';
+import modelPage from './models/page';
+import Category from './models/category';
 
 // connect to DB
 mongoose.connect(dbConfig.database);
@@ -33,6 +40,36 @@ app.use(bodyParser.urlencoded({ extende: false }));
 app.locals.errors = null;
 app.locals.messages = null;
 
+// Get all pages for Header.ejs
+modelPage.find((err, pages) => {
+  if (err) {
+    console.log(err);
+  } else {
+    app.locals.pages = pages;
+  }
+});
+
+// Get all Categories for Header.ejs
+Category.find({}, (err, categories) => {
+  if (err) {
+    console.log(err);
+  } else {
+    app.locals.categories = categories;
+  }
+});
+
+// Get /Cart for Header.ejs
+app.get('*', (req, res, next) => {
+  res.locals.cart = req.session.cart;
+  next();
+});
+
+// Express Messages Middleware
+app.use(require('connect-flash')());
+app.use((req, res, next) => {
+    res.locals.messages = require('express-messages')(req, res);
+    next();
+});
 // Express File Uploads
 app.use(fileUpload());
 
@@ -50,6 +87,23 @@ app.use(expressValidator({
       msg,
       value,
     };
+  },
+  customValidators: {
+    isImage(value, filename) {
+      const extension = (path.extname(filename)).toLowerCase();
+      switch (extension) {
+        case '.jpg':
+          return '.jpg';
+        case '.png':
+          return '.png';
+        case '.jpeg':
+          return '.jpeg';
+        case '':
+          return '.jpg';
+        default:
+          return false;
+      }
+    },
   },
 }));
 
@@ -77,12 +131,18 @@ app.use(express.static(path.join(__dirname, 'public/')));
 
 // Set routes
 app.use('/', page);
+app.use('/cart', cart);
+app.use('/products', products);
 app.use('/admin/pages', adminPages);
 app.use('/admin/categories', adminCategories);
 app.use('/admin/products', adminProducts);
 
+// API
+app.use('/api/v1/homepage', apiPage);
+app.use('/api/v1/products', apiProduct);
+
 // start server
-const port = 4000;
+const port = 5000;
 
 app.listen(port, () => {
   console.log(`server started on port: ${port}`);

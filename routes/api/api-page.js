@@ -1,5 +1,5 @@
 import express from 'express';
-import Page from '../models/page';
+import Page from '../../models/page';
 
 const router = express.Router();
 // GET Home page
@@ -7,12 +7,13 @@ const router = express.Router();
 router.get('/', (req, res) => {
   Page.findOne({ slug: 'home' }, (err, page) => {
     if (err) { console.log(err); }
-    res.render('index', {
-      title: page.title,
-      content: page.content,
+    res.json({
+      status: 'success',
+      data: page,
     });
   });
 });
+
 
 
 // GET a new page
@@ -22,10 +23,12 @@ router.get('/:slug', (req, res) => {
 
   Page.findOne({ slug }, (err, page) => {
     if (err) { console.log(err); }
-    if (page) {
-      res.render('index', {
-        title: page.title,
-        content: page.content,
+    if (!page) {
+      res.redirect('/');
+    } else {
+      res.json({
+        status: 'success',
+        data: page,
       });
     }
   });
