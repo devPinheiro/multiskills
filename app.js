@@ -9,17 +9,17 @@ import mkdirp from 'mkdirp';
 import resizeImg from 'resize-img';
 import fs from 'fs-extra';
 import fileUpload from 'express-fileupload';
-import adminProducts from './routes/admin_products';
-import page from './routes/page';
+// import adminProducts from './routes/admin_products';
+// import page from './routes/page';
 import adminPages from './routes/admin_pages';
-import adminCategories from './routes/admin_categories';
-import products from './routes/products';
-import cart from './routes/cart';
+// import adminCategories from './routes/admin_categories';
+// import products from './routes/products';
+// import cart from './routes/cart';
 import apiPage from './routes/api/api-page';
-import apiProduct from './routes/api/api-products';
+// import apiProduct from './routes/api/api-products';
 import dbConfig from './config/database';
 import modelPage from './models/page';
-import Category from './models/category';
+// import Category from './models/category';
 
 // connect to DB
 mongoose.connect(dbConfig.database);
@@ -49,20 +49,20 @@ modelPage.find((err, pages) => {
   }
 });
 
-// Get all Categories for Header.ejs
-Category.find({}, (err, categories) => {
-  if (err) {
-    console.log(err);
-  } else {
-    app.locals.categories = categories;
-  }
-});
+// // Get all Categories for Header.ejs
+// Category.find({}, (err, categories) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     app.locals.categories = categories;
+//   }
+// });
 
-// Get /Cart for Header.ejs
-app.get('*', (req, res, next) => {
-  res.locals.cart = req.session.cart;
-  next();
-});
+// // Get /Cart for Header.ejs
+// app.get('*', (req, res, next) => {
+//   res.locals.cart = req.session.cart;
+//   next();
+// });
 
 // Express Messages Middleware
 app.use(require('connect-flash')());
@@ -130,16 +130,16 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public/')));
 
 // Set routes
-app.use('/', page);
-app.use('/cart', cart);
-app.use('/products', products);
+// app.use('/', page);
+// app.use('/cart', cart);
+// app.use('/products', products);
 app.use('/admin/pages', adminPages);
-app.use('/admin/categories', adminCategories);
-app.use('/admin/products', adminProducts);
+// app.use('/admin/categories', adminCategories);
+// app.use('/admin/products', adminProducts);
 
 // API
 app.use('/api/v1/homepage', apiPage);
-app.use('/api/v1/products', apiProduct);
+// app.use('/api/v1/products', apiProduct);
 
 // start server
 const port = 5000;
