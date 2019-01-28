@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+
+    <title>Service</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-multiselect.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+        crossorigin="anonymous">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+
+<!-- end Nav -->
+<div class="register p-5">
+    <div class="row">
+        <div class="col-md-5 p-4">
+            <h1>Send your request</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Optio in rem sapiente saepe dolore suscipit exercitationem tempora, 
+                molestiae facere officiis omnis est sed deserunt,
+             illo doloribus natus? Saepe, dolorem mollitia.</p>
+             <img src="images/devices.png" class="img-fluid" alt="" srcset="">
+        </div>
+        <div class="col-md-7 p-4">
+            <form action="" method="POST" class="">
+               
+                
+                    <div class="pb-2">
+                        <label for="Personal Details"><h6><strong>Details Capture</strong></h6></label>
+                        <hr class=" mt-0 mb-3 gold_line">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group mb-4 pr-md-3 col-md-6 ">
+                            <input type="text" name="club_name" class="form-control " placeholder="Name of Club" id="" required>
+                        </div>
+                        
+                        <div class="form-group mb-4 pl-md-3 col-md-6">
+                        <select name="country" class="form-control" placeholder="Country/Division" id="" required>
+                            <option selected value="">Select Country/Division</option>
+                            <option value="Nigeria">Nigeria</option>
+                            <option value="Ghana">Ghana</option>
+                        </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group mb-4 pr-md-3 col-md-6 ">
+                            <input type="email" name="email" class="form-control " placeholder="Email" id="" required>
+                        </div>
+                    
+                        <div class="form-group mb-4 pl-md-3 col-md-6">
+                            <input type="number" name="phone" class="form-control " placeholder="Phone Number" id="" required>
+                        </div>
+                    </div>
+
+                    <div class="pb-2">
+                        <label for="Personal Details"><h6><strong>Player Requirement</strong></h6></label>
+                        <hr class=" mt-0 mb-3 gold_line">
+                    </div>
+
+                    <div class="form-row pb-3">
+                        <div class="col-md-12 pb-md-1">
+                           <label for="">Player Position (<small>select multiple preferred positions</small>)</label>
+                        </div>
+                        <select name="player_position" class="form-control" multiple="multiple" placeholder="Position" id="player_position"
+                            required>
+                            <option value="GK">Goal Keeper GK</option>
+                            <option value="CB">Central Back CB</option>
+                            <option value="RB">Right Back RB</option>
+                            <option value="LB">Left Back LB</option>
+                            <option value="DM">Defender Midfielder DM</option>
+                            <option value="CM">Central Midfielder CM</option>
+                            <option value="AM">Assistant Midfielder AM</option>
+                            <option value="SM">Side Midfielder SM</option>
+                            <option value="W">Winger</option>
+                            <option value="SS">Second Striker</option>
+                            <option value="S">Striker</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row pb-2">
+                        <div class="col-md-6 mb-4 pr-md-3">
+                            <select name="player_age" class="form-control" placeholder="Player Age Range" id="player_age" required>
+                                <option selected value="345">Select Player Age Range</option>
+                                <option value="Above 19 years">Above 19 years</option>
+                                <option value="19 - 21 years">19 - 21 years</option>
+                                <option value="22 - 25 years">22 - 25 years</option>
+                            </select>
+                        </div>
+                       
+                        <div class="col-md-6 mb-4 pl-md-3">
+                            <select name="player_age" class="form-control" placeholder="Player Age Range" id="player_age" required>
+                                <option selected value="345">Select Player's Height Range</option>
+                                <option value="Above 19 years">Above 19 years</option>
+                                <option value="19 - 21 years">19 - 21 years</option>
+                                <option value="22 - 25 years">22 - 25 years</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="pb-2">
+                        <label for="Personal Details"><h6><strong>Player Career</strong></h6></label>
+                        <hr class=" mt-0 mb-3 gold_line">
+                    </div>
+                    <!--  -->
+                    <div class="form-row pb-2">
+                        <div class="col-md-12 pb-md-1">
+                            <label for="">Status</label>
+                        </div>
+                        <div class="form-group pl-md-2">
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" for="inlineRadio1"><input class="form-check-input" type="radio" name="player_status" id="inlineRadio1" value="free">
+                            Free</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" for="inlineRadio1"><input class="form-check-input" type="radio" name="player_status" id="inlineRadio2" value="Contracted">
+                            Contracted</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" for="inlineRadio1"></label><input class="form-check-input" type="radio" name="player_status" id="inlineRadio33" value="Any">
+                                Any</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 pb-md-1">
+                            <label for="">Player's Experience</label>
+                        </div>
+                        <div class="form-group pl-md-2">
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" for="inlineRadio1"><input class="form-check-input" type="radio" name="player_exp"
+                                        id="inlineRadio1" value="Acamedy"> Acamedy
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" for="inlineRadio1"><input class="form-check-input" type="radio" name="player_exp"
+                                        id="inlineRadio2" value="Amateur"> Amateur
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" for="inlineRadio1"></label><input class="form-check-input" type="radio" name="player_exp"
+                                    id="inlineRadio33" value="Semi-Pro"> Semi-Pro
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" for="inlineRadio1"></label><input class="form-check-input" type="radio" name="player_exp"
+                                    id="inlineRadio33" value="Professional"> Professional
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" for="inlineRadio1"></label><input class="form-check-input" type="radio" name="player_exp"
+                                    id="inlineRadio33" value="International"> International
+                                </label>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+
+                    <!--  -->
+                    <div class="form-row pb-md-2">
+                        <div class="col-md-6 pb-md-1">
+                            <label for="">Region</label>
+                        </div>
+                        <div class="col-md-6 pb-md-1 pl-md-2">
+                            <label for="">Country</label>
+                        </div>
+                        <div class="col-md-6 mb-4 pr-md-3">
+                            <select name="player_region" class="form-control" id="player_region" required>
+                                <option selected value="">Select Region</option>
+                                <option value="Nigeria">Africa</option>
+                                <option value="Ghana">Europe</option>
+                            </select>
+                        </div>
+                    
+                        <div class="col-md-6 mb-4 pl-md-3">
+                            <select name="player_country" class="form-control" id="player_country" required>
+                                <option selected value="">Select Country</option>
+                                <option value="Nigeria">Nigeria</option>
+                                <option value="Ghana">Ghana</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <!--  -->
+                    <div class="pb-2">
+                        <label for="Personal Details"><h6><strong>Offer Details</strong></h6></label>
+                        <hr class=" mt-0 mb-3 gold_line">
+                    </div>
+                    <!--  -->
+                    <div class="form-row pb-2">
+                        <div class="col-md-12 pb-md-1">
+                            <label for="">Signing Fee</label>
+                        </div>
+                        <div class="form-group pl-md-2">
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" for="inlineRadio1"><input class="form-check-input" type="radio" name="signing_fee"
+                                        id="inlineRadio1" value="Yes"> Yes
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" for="inlineRadio1"><input class="form-check-input" type="radio" name="signing_fee"
+                                        id="inlineRadio2" value="No"> No
+                                </label>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="form-row pb-md-2">
+                        <div class="col-md-8 pb-md-1">
+                            <label for="">Amount</label>
+                        </div>
+                        <div class="col-md-4 pb-md-1 pl-md-2">
+                            <label for="">Currency</label>
+                        </div>
+                        <div class="col-md-8 mb-4 pr-md-3">
+                            <select name="player_signing_fee" class="form-control" id="player_region" required>
+                                <option selected value="">0 - 9,999</option>
+                                <option value="Nigeria">10,000 - 99,999</option>
+                                <option value="Ghana">100,000 - 999,999</option>
+                                <option value="Ghana">100,000,000 - 999,999,999</option>
+                                <option value="Ghana">100,000,000,000</option>
+                            </select>
+                        </div>
+                    
+                        <div class="col-md-4 mb-4 pl-md-3">
+                            <select name="player_signing_fee_curr" class="form-control" id="player_country" required>
+                                <option selected value="">Naira</option>
+                                <option value="Nigeria">Yen</option>
+                                <option value="Ghana">Dollars</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!--  -->
+                    <div class="form-row pb-md-2">
+                        <div class="col-md-12 pb-md-1">
+                            <label for="">Salary</label>
+                        </div>
+                        <div class="col-md-8 mb-4 pr-md-3">
+                            <select name="player_salary" class="form-control" id="player_region" required>
+                                <option selected value="">0 - 9,999</option>
+                                <option value="Nigeria">10,000 - 99,999</option>
+                                <option value="Ghana">100,000 - 999,999</option>
+                                <option value="Ghana">100,000,000 - 999,999,999</option>
+                                <option value="Ghana">100,000,000,000</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!--  -->
+                    
+                        <div class="form-group pb-md-4">
+                            <label for="exampleFormControlTextarea1">Additional details</label>
+                            <textarea class="form-control" name="other_details" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                   
+                    
+                   <button type="submit" class="btn btn-block btn-primary pt-2 pb-2">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- SignUp -->
+
+<!-- Footer -->
+
+
+
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-multiselect.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="js/ie10-viewport-bug-workaround.js"></script>
+<script src="js/script.js"></script>
