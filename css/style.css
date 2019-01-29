@@ -92,29 +92,25 @@ body {
   
 }
 
-.box_mode {
- 
-  margin: 0 auto;
-}
 /* 
 * Site Hero
 * ----------------------------------------------
 */
 
 .site-hero{
-   height: 500px;
+   height: 450px;
 }
 
 .site-hero-sub {
-  margin: auto;
   padding: 130px 60px 150px 60px;
-   background:linear-gradient(to right, rgba(87, 175, 255, 0.8705882352941177) 0%, rgba(26, 129, 219, 0.74) 75%,  rgb(26, 129, 219) 100%), url(../images/engage-your-customers.jpg)no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: auto;
+  background: linear-gradient(to right, rgba(87, 175, 255, 0.87) 0%, rgba(26, 129, 219, 0.74) 75%, rgb(26, 129, 219) 100%);
   height: 600px;
 }
 
+.site_bal {
+   margin: 0 auto;
+   width: 700px;
+}
 
 
 /* .site-hero-sub-2 {
@@ -127,14 +123,7 @@ body {
 } */
 
 
-.site-hero-sub-3 {
-  margin: auto;
-   padding: 130px 60px 150px 60px;
-   background:linear-gradient(to bottom, rgba(22, 22, 22, 0.644) 0%, rgba(22, 22, 22, 0.5) 75%, rgba(22, 22, 22, 0.5) 100%), url('../images/outlyer-landingpage3.jpg')no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: auto;
-}
+
 
 .site_logo img{
     height: 45px;
