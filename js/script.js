@@ -19,7 +19,7 @@
         site_hero_t.text(value.title);
         site_hero_s.text(value.subtitle);
         site_hero_img.css({
-         'background': `linear-gradient(to right, rgba(87, 175, 255, 0.8705882352941177) 0%, rgba(26, 129, 219, 0.74) 75%,  rgb(26, 129, 219) 100%), url(https://multiskills.herokuapp.com${value.image.url})no-repeat`, 'background-size': 'cover',
+         'background': `linear-gradient(to right, rgba(87, 175, 255, 0.8705882352941177) 0%, rgba(26, 129, 219, 0.74) 75%,  rgb(26, 129, 219) 100%), url(${value.image.url})no-repeat`, 'background-size': 'cover',
          'background-position': 'center' 
         })
   
@@ -38,7 +38,7 @@
           
             let text = `
                  <div class="col-md-4 text-center pt-5 pb-5">
-                            <img src="https://multiskills.herokuapp.com${value.image.url}" alt="" class="img-fluid img-circle mt-4 mb-4 sit">
+                            <img src="${value.image.url}" alt="" class="img-fluid img-circle mt-4 mb-4 sit">
                       
                        
                             <h4 class="site_1_hero_t_3">${value.title}</h4>
@@ -65,7 +65,7 @@
         
         let text = `
       <div class="col-md-3 text-center">
-                  <img class="partner_1" src="https://multiskills.herokuapp.com${value.image["0"].url}"  alt="" srcset="">
+                  <img class="partner_1" src="${value.image["0"].url}"  alt="" srcset="">
                 </div>
     `;
 
