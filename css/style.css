@@ -159,7 +159,7 @@ body {
 }
 
 .section_c {
-  background:linear-gradient(to right, rgba(87, 175, 255, 0.8705882352941177) 0%, rgba(26, 129, 219, 0.74) 75%,  rgb(26, 129, 219) 100%), url('https://www.zedsphere.com/hs-fs/hubfs/COPY.jpg?width=5957&name=COPY.jpg') no-repeat;
+  background:linear-gradient(to right, rgba(87, 175, 255, 0.8705882352941177) 0%, rgba(26, 129, 219, 0.74) 75%,  rgb(26, 129, 219) 100%), url('http://res.cloudinary.com/appnet/image/upload/c_fill,w_1294/v1548942331/Multiskills/COPY.jpg') no-repeat;
   background-size: cover;
   background-position: center;  
   height: 450px;
